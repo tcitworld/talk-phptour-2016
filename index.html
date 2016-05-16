@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>wallabag, comment on a migré vers symfony3</title>
+		<title>wallabag : comment on a migré vers symfony3</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,6 +14,10 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<style>
+		.reveal section img { border:0; box-shadow: none; }
+		</style>
 
 		<script>
 			var link = document.createElement( 'link' );
@@ -43,14 +47,16 @@
 
 				<section>
 					<h2>Nous deux</h2>
-					<p>
-						<img src="img/j0k.png" /><br />
-						Jérémy Benoist, lead developer chez 20minutes
-					</p>
-					<p>
-						<img src="img/nicosomb.png" /><br />
-						Nicolas Lœuillet, développeur chez Smile
-					</p>
+					<table>
+						<tr>
+							<td align="center"><img src="img/j0k.png" /><br />
+						<strong>Jérémy Benoist</strong><br />lead developer chez 20minutes<br /><img src="img/20minutes.jpg" /></td>
+							<td align="center">
+								<img src="img/nicosomb.png" /><br />
+						<strong>Nicolas Lœuillet</strong><br />développeur chez Smile<br /><img src="img/smile.png" />
+							</td>
+						</tr>
+					</table>
 				</section>
 
 				<section>
@@ -258,6 +264,8 @@
 				<section>
 					<section>
 						<h2>Road to v2 : le choix du framework</h2>
+
+						<p><img src="img/symfony.png" /></p>
 
 						<aside class="notes">
 							Rapidement, (3 ou 4 mois après la toute première version de la v1), une refonte s'est fait sentir. Mais Nicolas n'avait pas les compétences pour se lancer dans le chantier tout seul. Plusieurs pistes : changement de technos, micro frameworks PHP, Symfony, etc. 
