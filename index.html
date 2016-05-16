@@ -36,7 +36,8 @@
 				<section>
 					<h2>wallabag : comment on a migré vers symfony3</h2>
 					<p>
-						<small>Par Jérémy Benoist (<a href="https://twitter.com/j0k">@j0k</a>) et Nicolas Lœuillet (<a href="https://twitter.com/nicosomb">@nicosomb</a>)</small>
+						<small>Par Jérémy Benoist (<a href="https://twitter.com/j0k">@j0k</a>) et Nicolas Lœuillet (<a href="https://twitter.com/nicosomb">@nicosomb</a>)<br />
+						<a href="https://wallabag.org">wallabag.org</a></small>
 					</p>
 				</section>
 
@@ -59,7 +60,7 @@
 							<li class="fragment">fonctionnalités et histoire</li>
 							<li class="fragment">la v1 : pourquoi ça n'était pas mieux avant</li>
 							<li class="fragment">la v2 : pourquoi c'est mieux maintenant</li>
-							<li class="fragment">bench comparatif</li>
+							<li class="fragment">benchmark</li>
 							<li class="fragment">les étapes pour arriver à la v2</li>
 							<li class="fragment">les étapes en cours</li>
 							<li class="fragment">les étapes à venir</li>
@@ -68,45 +69,46 @@
 				</section>
 
 				<section>
-					<h2>Fonctionnalités et histoire</h2>
-					<h3>Ce que ça fait</h3>
-					<table>
-						<tr>
-							<td><img src="img/wallabag_website_features_1.png" /></td>
-							<td><img src="img/wallabag_website_features_2.png" /></td>
-						</tr>
-						<tr>
-							<td><img src="img/wallabag_website_features_3.png" /></td>
-							<td><img src="img/wallabag_website_features_4.png" /></td>
-						</tr>
-						<tr>
-							<td colspan="2" align="center"><img src="img/wallabag_website_features_5.png" /></td>
-						</tr>
-					</table>
+					<section>
+						<h2>Ce que ça fait</h2>
+						<table>
+							<tr>
+								<td><img src="img/wallabag_website_features_1.png" /></td>
+								<td><img src="img/wallabag_website_features_2.png" /></td>
+							</tr>
+							<tr>
+								<td><img src="img/wallabag_website_features_3.png" /></td>
+								<td><img src="img/wallabag_website_features_4.png" /></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center"><img src="img/wallabag_website_features_5.png" /></td>
+							</tr>
+						</table>
 
-				    <aside class="notes">
-				        wallabag est un read-it-later, une application de lecture différée : vous y stockez un article pour le lire plus tard, le contenu de l'article sera stocké et uniquement le contenu (wallabag supprimera tout ce qui est superflu, comme la publicité par exemple). Puisque wallabag existe en tant qu'application web et sur nos smartphones, vous retrouverez ces articles synchronisés automatiquement sur votre téléphone. 
-				    </aside>
-				</section>
+					    <aside class="notes">
+					        wallabag est un read-it-later, une application de lecture différée : vous y stockez un article pour le lire plus tard, le contenu de l'article sera stocké et uniquement le contenu (wallabag supprimera tout ce qui est superflu, comme la publicité par exemple). Puisque wallabag existe en tant qu'application web et sur nos smartphones, vous retrouverez ces articles synchronisés automatiquement sur votre téléphone. 
+					    </aside>
+					</section>
 
-				<section>
-					<h2>Fonctionnalités et histoire</h2>
-					<h3>Histoire</h3>
-					<p><img src="img/poche.jpg" /></p>
+					<section>
+						<h2>Histoire</h2>
+						<p><img src="img/poche.jpg" /></p>
 
-				    <aside class="notes">
-				        En mars 2013, Google annonce la fermeture de l'un de ses services les plus populaires : Google Reader. À l'époque utilisateur de Pocket, un très bon service de read-it-later mais fermé et propriétaire, je me suis demandé ce que j'allais devenir si mon deuxième service préféré fermait du jour au lendemain. C'est ainsi qu'en avril 2013, poche, petite alternative sans prétention, est née. 
-						Rapidement, via le planet libre, quelques retours sont faits, quelques idées sont proposées. C'est à cette période que Thomas arrive.
-						Janvier 2014, un tweet (https://twitter.com/wallabagapp/status/423786365944225792 ) est mal interprété par Pocket : ils nous contactent donc pour nous demander de : 
-						* changer de nom
-						* changer de logo
-						* ne plus utiliser le terme read it later (marque déposée)
-						* ne plus dire qu'ils sont non free
-						Brainstorming avec les utilisateurs de poche : un nouveau nom est trouvé, wallabag. Un logo est créé par une bénévole. 
-						Début 2015, on s'active vraiment pour la v2, avec l'arrivée de Jérémy dans l'équipe https://github.com/wallabag/wallabag/pull/1049 
-						Première alpha, septembre 2015
-						v2 livrée le 3 avril 2016, trois ans jour pour jour après le tout premier commit.  
-				    </aside>
+					    <aside class="notes">
+					        En mars 2013, Google annonce la fermeture de l'un de ses services les plus populaires : Google Reader. À l'époque utilisateur de Pocket, un très bon service de read-it-later mais fermé et propriétaire, je me suis demandé ce que j'allais devenir si mon deuxième service préféré fermait du jour au lendemain. C'est ainsi qu'en avril 2013, poche, petite alternative sans prétention, est née. 
+							Rapidement, via le planet libre, quelques retours sont faits, quelques idées sont proposées. C'est à cette période que Thomas arrive.
+							Janvier 2014, un tweet (https://twitter.com/wallabagapp/status/423786365944225792 ) est mal interprété par Pocket : ils nous contactent donc pour nous demander de : 
+							* changer de nom
+							* changer de logo
+							* ne plus utiliser le terme read it later (marque déposée)
+							* ne plus dire qu'ils sont non free
+							Brainstorming avec les utilisateurs de poche : un nouveau nom est trouvé, wallabag. Un logo est créé par une bénévole. 
+							Début 2015, on s'active vraiment pour la v2, avec l'arrivée de Jérémy dans l'équipe https://github.com/wallabag/wallabag/pull/1049 
+							Première alpha, septembre 2015
+							v2 livrée le 3 avril 2016, trois ans jour pour jour après le tout premier commit.  
+					    </aside>
+					</section>
+
 				</section>
 
 				<section>
@@ -116,8 +118,7 @@
 					</section>
 
 					<section>
-						<h2>Pourquoi ça n'était pas mieux avant</h2>
-						<h3>Version de PHP</h3>
+						<h2>Avant : version de PHP</h2>
 
 						<ul>
 							<li>PHP >= 5.3.3</li>
@@ -128,8 +129,7 @@
 					</section>
 
 					<section>
-						<h2>Pourquoi ça n'était pas mieux avant</h2>
-						<h3>Fréquence des mises à jour</h3>
+						<h2>Avant : fréquence des mises à jour</h2>
 						<ul>
 							<li>Pas de calendrier défini</li>
 							<li>10 versions mineures en deux ans</li>
@@ -138,22 +138,13 @@
 					</section>
 
 					<section>
-						<h2>Pourquoi ça n'était pas mieux avant</h2>
-						<h3>Qualité du code</h3>
+						<h2>Avant : lacunes techniques</h2>
 						<ul>
-							<li>396 fichiers</li>
-							<li>95.788 lignes de code</li>
-							<li>37.902 lignes de code</li>
-						</ul>
-					</section>
-
-					<section>
-						<h2>Pourquoi ça n'était pas mieux avant</h2>
-						<h3>Lacunes techniques</h3>
-						<ul>
+							<li>Dépendances versionnées</li>
 							<li>Pas d'API</li>
 							<li>Pas de tests</li>
 							<li>Pas de pull requests par l'équipe</li>
+							<li>MAJ BDD manuelle</li>
 							<li>Déploiement manuel via Filezilla</li>
 							<li>Équipe de deux personnes</li>
 						</ul>
@@ -167,16 +158,14 @@
 					</section>
 
 					<section>
-						<h2>Pourquoi c'est mieux maintenant</h2>
-						<h3>Version de PHP</h3>
+						<h2>Maintenant : version de PHP</h2>
 							<li>PHP >= 5.5.9</li>
 							<li>Compatible PHP7</li>
 							<li>Symfony3</li>
 					</section>
 
 					<section>
-						<h2>Pourquoi c'est mieux maintenant</h2>
-						<h3>Fréquence des mises à jour</h3>
+						<h2>Maintenant : fréquence des mises à jour</h2>
 						<ul>
 							<li>Roadmap établie</li>
 							<li>Une version mineure tous les trois mois</li>
@@ -184,28 +173,18 @@
 					</section>
 
 					<section>
-						<h2>Pourquoi c'est mieux maintenant</h2>
-						<h3>Qualité du code</h3>
-						<ul>
-							<li>129 fichiers</li>
-							<li>95.788 lignes de code</li>
-							<li>8.822 lignes de code</li>
-						</ul>
-					</section>
-
-					<section>
-						<h2>Pourquoi c'est mieux maintenant</h2>
-						<h3>On comble les lacunes techniques</h3>
+						<h2>Maintenant : on comble les lacunes techniques</h2>
 						<ul>
 							<li>
 								Sorte de Definition of Done pour chaque commit :
 								<ul>
 									<li>Documentation utilisateur</li>
-									<li>Tests unitaires et fonctionnels (+ validation des fichiers de trads)</li>
+									<li>Tests unitaires et fonctionnels (+ validation des fichiers de traductions)</li>
 									<li>Relecture de la pull request</li>
 								</ul>
 							</li>
 							<li>Déploiement via Capistrano</li>
+							<li>Migrations BDD</li>
 							<li>Le moins d'actions manuelles possibles pour la gestion du projet</li>
 							<li>Équipe plus conséquente : une core team, des traducteurs, des développeurs</li>
 						</ul>
@@ -214,25 +193,71 @@
 
 				<section>
 					<section>
-						<h2>Bench comparatif</h2>
-						<h3>Liste d'articles</h3>
-						<p>wallabag v1</p>
-						<ul>
-							<li>80 ms</li>
-							<li>9 Mo</li>
-						</ul>
-						<p>wallabag v2</p>
-						<ul>
-							<li>330 ms (dont 215 ms pour Symfony)</li>
-							<li>16 Mo</li>
-						</ul>
+						<h2>Benchmark : qualité de code</h2>
+						<table>
+							<tr>
+								<th></th>
+								<th>v1</th>
+								<th>v2</th>
+							</tr>
+							<tr>
+								<td>Fichiers</td>
+								<td>396</td>
+								<td>129</td>
+							</tr>
+							<tr>
+								<td>Code</td>
+								<td>94.922 lignes<br />240 lignes / fichier</td>
+								<td>8.822 lignes<br />68 lignes / fichier</td>
+							</tr>
+							<tr>
+								<td>Commentaires</td>
+								<td>37.855 lignes</td>
+								<td>2.462 lignes</td>
+							</tr>
+							<tr>
+								<td>Sensio Insight</td>
+								<td>29/100<br />2 ans pour la médaille Platinum</td>
+								<td>32/100<br />3 semaines pour la médaille Platinum</td>
+							</tr>
+							<tr>
+								<td>Scrutinizer</td>
+								<td>4,95/10<br />(1 erreur critique, +700 majeures)</td>
+								<td>9,39/10<br />(4 erreurs majeures)</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h2>Benchmark : chargement des pages</h2>
+						<table>
+							<tr>
+								<th></th>
+								<th>v1</th>
+								<th>v2</th>
+							</tr>
+							<tr>
+								<td>Liste d'articles (460)</td>
+								<td>267ms<br />16 Mo</td>
+								<td>620ms<br />221ms pour Symfony<br />28 Mo</td>
+							</tr>
+							<tr>
+								<td>Un article</td>
+								<td>73ms<br />9 Mo</td>
+								<td>342ms<br />230ms pour Symfony<br />16 Mo</td>
+							</tr>
+							<tr>
+								<td>Liste des tags (20)</td>
+								<td>85ms<br />8,5 Mo</td>
+								<td>498ms<br />225ms pour Symfony<br />22 Mo</td>
+							</tr>
+						</table>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Les étapes pour arriver à la v2</h2>
-						<h3>Choix du framework</h3>
+						<h2>Road to v2 : le choix du framework</h2>
 
 						<aside class="notes">
 							Rapidement, (3 ou 4 mois après la toute première version de la v1), une refonte s'est fait sentir. Mais Nicolas n'avait pas les compétences pour se lancer dans le chantier tout seul. Plusieurs pistes : changement de technos, micro frameworks PHP, Symfony, etc. 
@@ -242,18 +267,17 @@
 					</section>
 
 					<section>
-						<h2>Les étapes pour arriver à la v2</h2>
-						<h3>Adaptation de Full-Text RSS => Graby (mi avril 2015)</h3>
+						<h2>Road to v2 : adaptation de Full-Text RSS => Graby (mi avril 2015)</h2>
+						<h3></h3>
 						<ul>
-							<li>Mise en place de test fonctionnels sur l'existant</li>
+							<li>Mise en place de tests fonctionnels sur l'existant</li>
 							<li>Ré-organisation / refonte</li>
 							<li>SiteConfig chargé via composer</li>
 						</ul>
 					</section>
 
 					<section>
-						<h2>Les étapes pour arriver à la v2</h2>
-						<h3>Lib utilisées pour l'API</h3>
+						<h2>Road to v2 : librairies utilisées pour l'API</h2>
 						<ul>
 							<li>RestBundle</li>
 							<li>CorsBundle</li>
@@ -264,8 +288,7 @@
 					</section>
 
 					<section>
-						<h2>Les étapes pour arriver à la v2</h2>
-						<h3>Listing des features par lib</h3>
+						<h2>Road to v2 : listing des features par librairie</h2>
 						<ul>
 							<li>Utilisateur => FosUserBundle</li>
 							<li>Filtre => FormFilterBundle</li>
@@ -279,9 +302,16 @@
 					</section>
 
 					<section>
-						<h2>Les étapes pour arriver à la v2</h2>
-						<h3>Difficultés</h3>
+						<h2>Road to v2 : les difficultés</h2>
+						<ul>
+							<li>Installation de l'application plus complexe</li>
+							<li>Limites de SQLite</li>
+						</ul>
 
+						<aside class="notes">
+							Grosse contrainte d'utiliser un framework comme Symfony : là où la v1 s'installe quasiment partout et très facilement, la v2 va forcément devenir plus complexe à installer pour les débutants.
+							Concernant SQLite
+						</aside>
 					</section>
 				</section>
 
@@ -291,6 +321,14 @@
 						<li>RabbitMQ</li>
 						<li>Elasticsearch</li>
 					</ul>
+
+					<aside class="notes">
+						Les imports via les services externes sont très gourmands en ressource et depuis le début du projet, ils ont toujours été sources d'issues : timeout en pagaille. 
+						Avec la v2, nous avons décidé de reporter ça sur un broker (RabbitMQ pour l'instant, mais rien n'est encore réellement acté). 
+						Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles : 
+						* import 
+						* action en masse sur les articles (refetch du contenu par exemple)
+					</aside>
 				</section>
 
 				<section>
