@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>wallabag : comment on a migré vers symfony3</title>
+		<title>wallabag : comment on a migré vers Symfony 3</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -38,7 +38,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>wallabag : comment on a migré vers symfony3</h2>
+					<h2>wallabag : comment on a migré vers Symfony 3</h2>
 					<p>
 						<small>Par Jérémy Benoist (<a href="https://twitter.com/j0k">@j0k</a>) et Nicolas Lœuillet (<a href="https://twitter.com/nicosomb">@nicosomb</a>)<br />
 						<a href="https://wallabag.org">wallabag.org</a></small>
@@ -66,7 +66,7 @@
 							<li class="fragment">fonctionnalités et histoire</li>
 							<li class="fragment">la v1 : pourquoi ça n'était pas mieux avant</li>
 							<li class="fragment">la v2 : pourquoi c'est mieux maintenant</li>
-							<li class="fragment">benchmark</li>
+							<li class="fragment">quelques benchmarks</li>
 							<li class="fragment">les étapes pour arriver à la v2</li>
 							<li class="fragment">les étapes en cours</li>
 							<li class="fragment">les étapes à venir</li>
@@ -92,7 +92,7 @@
 						</table>
 
 					    <aside class="notes">
-					        wallabag est un read-it-later, une application de lecture différée : vous y stockez un article pour le lire plus tard, le contenu de l'article sera stocké et uniquement le contenu (wallabag supprimera tout ce qui est superflu, comme la publicité par exemple). Puisque wallabag existe en tant qu'application web et sur nos smartphones, vous retrouverez ces articles synchronisés automatiquement sur votre téléphone. 
+					        wallabag est un read-it-later, une application de lecture différée : vous y stockez un article pour le lire plus tard, le contenu de l'article sera stocké et uniquement le contenu (wallabag supprimera tout ce qui est superflu, comme la publicité par exemple). Puisque wallabag existe en tant qu'application web et sur nos smartphones, vous retrouverez ces articles synchronisés automatiquement sur votre téléphone.
 					    </aside>
 					</section>
 
@@ -101,17 +101,17 @@
 						<p><img src="img/poche.jpg" /></p>
 
 					    <aside class="notes">
-					        En mars 2013, Google annonce la fermeture de l'un de ses services les plus populaires : Google Reader. À l'époque utilisateur de Pocket, un très bon service de read-it-later mais fermé et propriétaire, je me suis demandé ce que j'allais devenir si mon deuxième service préféré fermait du jour au lendemain. C'est ainsi qu'en avril 2013, poche, petite alternative sans prétention, est née. 
+					        En mars 2013, Google annonce la fermeture de l'un de ses services les plus populaires : Google Reader. À l'époque utilisateur de Pocket, un très bon service de read-it-later mais fermé et propriétaire, je me suis demandé ce que j'allais devenir si mon deuxième service préféré fermait du jour au lendemain. C'est ainsi qu'en avril 2013, poche, petite alternative sans prétention, est née.
 							Rapidement, via le planet libre, quelques retours sont faits, quelques idées sont proposées. C'est à cette période que Thomas arrive.
-							Janvier 2014, un tweet (https://twitter.com/wallabagapp/status/423786365944225792 ) est mal interprété par Pocket : ils nous contactent donc pour nous demander de : 
+							Janvier 2014, un tweet (https://twitter.com/wallabagapp/status/423786365944225792 ) est mal interprété par Pocket : ils nous contactent donc pour nous demander de :
 							* changer de nom
 							* changer de logo
 							* ne plus utiliser le terme read it later (marque déposée)
 							* ne plus dire qu'ils sont non free
-							Brainstorming avec les utilisateurs de poche : un nouveau nom est trouvé, wallabag. Un logo est créé par une bénévole. 
-							Début 2015, on s'active vraiment pour la v2, avec l'arrivée de Jérémy dans l'équipe https://github.com/wallabag/wallabag/pull/1049 
+							Brainstorming avec les utilisateurs de poche : un nouveau nom est trouvé, wallabag. Un logo est créé par une bénévole.
+							Début 2015, on s'active vraiment pour la v2, avec l'arrivée de Jérémy dans l'équipe https://github.com/wallabag/wallabag/pull/1049
 							Première alpha, septembre 2015
-							v2 livrée le 3 avril 2016, trois ans jour pour jour après le tout premier commit.  
+							v2 livrée le 3 avril 2016, trois ans jour pour jour après le tout premier commit.
 					    </aside>
 					</section>
 
@@ -165,9 +165,12 @@
 
 					<section>
 						<h2>Maintenant : version de PHP</h2>
+						<ul>
 							<li>PHP >= 5.5.9</li>
-							<li>Compatible PHP7</li>
-							<li>Symfony3</li>
+							<li>Compatible PHP 7</li>
+							<li>Compatible HHVM (<i>même si personne ne s'en sert</i>)</li>
+							<li>Symfony 3</li>
+						</ul>
 					</section>
 
 					<section>
@@ -185,13 +188,13 @@
 								Sorte de Definition of Done pour chaque commit :
 								<ul>
 									<li>Documentation utilisateur</li>
-									<li>Tests unitaires et fonctionnels (+ validation des fichiers de traductions)</li>
-									<li>Relecture de la pull request</li>
+									<li>Tests unitaires et fonctionnels</li>
+									<li>Relecture des PRs</li>
 								</ul>
 							</li>
 							<li>Déploiement via Capistrano</li>
 							<li>Migrations BDD</li>
-							<li>Le moins d'actions manuelles possibles pour la gestion du projet</li>
+							<li>Le moins d'actions manuelles possibles</li>
 							<li>Équipe plus conséquente : une core team, des traducteurs, des développeurs</li>
 						</ul>
 					</section>
@@ -253,17 +256,17 @@
 							<tr>
 								<td>Liste d'articles (460)</td>
 								<td>267ms<br />16 Mo</td>
-								<td>620ms<br />221ms pour Symfony<br />28 Mo</td>
+								<td><span style="color: red">620ms</span>(221ms pour Sf)<br /><span style="color: red">28 Mo</span></td>
 							</tr>
 							<tr>
 								<td>Un article</td>
 								<td>73ms<br />9 Mo</td>
-								<td>342ms<br />230ms pour Symfony<br />16 Mo</td>
+								<td><span style="color: red">342ms</span>(230ms pour Sf)<br /><span style="color: red">16 Mo</span></td>
 							</tr>
 							<tr>
 								<td>Liste des tags (20)</td>
 								<td>85ms<br />8,5 Mo</td>
-								<td>498ms<br />225ms pour Symfony<br />22 Mo</td>
+								<td><span style="color: red">498ms</span>(225ms pour Sf)<br /><span style="color: red">22 Mo</span></td>
 							</tr>
 						</table>
 					</section>
@@ -276,9 +279,9 @@
 						<p><img src="img/symfony.png" /></p>
 
 						<aside class="notes">
-							Rapidement, (3 ou 4 mois après la toute première version de la v1), une refonte s'est fait sentir. Mais Nicolas n'avait pas les compétences pour se lancer dans le chantier tout seul. Plusieurs pistes : changement de technos, micro frameworks PHP, Symfony, etc. 
-							Une première ébauche de refonte avec Symfony a été démarrée avec Vincent Jousse, mais faute de temps, il a du quitter le projet. 
-							Puis est arrivé Jérémy 
+							Rapidement, (3 ou 4 mois après la toute première version de la v1), une refonte s'est fait sentir. Mais Nicolas n'avait pas les compétences pour se lancer dans le chantier tout seul. Plusieurs pistes : changement de technos, micro frameworks PHP, Symfony, etc.
+							Une première ébauche de refonte avec Symfony a été démarrée avec Vincent Jousse, mais faute de temps, il a du quitter le projet.
+							Puis est arrivé Jérémy
 						</aside>
 					</section>
 
@@ -339,10 +342,10 @@
 					</ul>
 
 					<aside class="notes">
-						Les imports via les services externes sont très gourmands en ressource et depuis le début du projet, ils ont toujours été sources d'issues : timeout en pagaille. 
-						Avec la v2, nous avons décidé de reporter ça sur un broker (RabbitMQ pour l'instant, mais rien n'est encore réellement acté). 
-						Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles : 
-						* import 
+						Les imports via les services externes sont très gourmands en ressource et depuis le début du projet, ils ont toujours été sources d'issues : timeout en pagaille.
+						Avec la v2, nous avons décidé de reporter ça sur un broker (RabbitMQ pour l'instant, mais rien n'est encore réellement acté).
+						Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles :
+						* import
 						* action en masse sur les articles (refetch du contenu par exemple)
 					</aside>
 				</section>
