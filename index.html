@@ -17,6 +17,8 @@
 
 		<style>
 		.reveal section img { border:0; box-shadow: none; }
+		h2.black, ul.black li {color: #000;}
+		h2.white, .white, .white a {color: #fff }
 		</style>
 
 		<script>
@@ -37,9 +39,9 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<h2>wallabag : comment on a migré vers Symfony 3</h2>
-					<p>
+				<section data-background="img/bg_titre.jpg">
+					<h2 class="black">wallabag : comment on a migré vers Symfony 3</h2>
+					<p class="white">
 						<small>Par Jérémy Benoist (<a href="https://twitter.com/j0k">@j0k</a>) et Nicolas Lœuillet (<a href="https://twitter.com/nicosomb">@nicosomb</a>)<br />
 						<a href="https://wallabag.org">wallabag.org</a></small>
 					</p>
@@ -59,22 +61,25 @@
 					</table>
 				</section>
 
-				<section>
-					<h2>Plan</h2>
-					<p>
-						<ul>
-							<li class="fragment">fonctionnalités et histoire</li>
-							<li class="fragment">la v1 : pourquoi ça n'était pas mieux avant</li>
-							<li class="fragment">la v2 : pourquoi c'est mieux maintenant</li>
-							<li class="fragment">quelques benchmarks</li>
-							<li class="fragment">les étapes pour arriver à la v2</li>
-							<li class="fragment">les étapes en cours</li>
-							<li class="fragment">les étapes à venir</li>
-						</ul>
-					</p>
+				<section data-background="img/bg_plan.jpg">
+					<h2 class="black">Plan</h2>
+					<ul class="black">
+						<li>fonctionnalités et histoire</li>
+						<li>la v1 : pourquoi ça n'était pas mieux avant</li>
+						<li>la v2 : pourquoi c'est mieux maintenant</li>
+						<li>quelques benchmarks</li>
+						<li>les étapes pour arriver à la v2</li>
+						<li>les étapes en cours</li>
+						<li>les étapes à venir</li>
+					</ul>
 				</section>
 
 				<section>
+
+					<section data-background="img/bg_histoire.jpg">
+						<h2 class="black">Fonctionnalités et histoire</h2>
+					</section>
+
 					<section>
 						<h2>Ce que ça fait</h2>
 						<table>
@@ -118,6 +123,11 @@
 				</section>
 
 				<section>
+
+					<section data-background="img/bg_avant.jpg">
+						<h2 class="black">Pourquoi ça n'était pas mieux avant</h2>
+					</section>
+
 					<section>
 						<h2>Pourquoi ça n'était pas mieux avant</h2>
 						<p><img src="img/wllbgv1.png" /></p>
@@ -158,6 +168,11 @@
 				</section>
 
 				<section>
+
+					<section data-background="img/bg_maintenant.jpg">
+						<h2 class="white">Pourquoi c'est mieux maintenant</h2>
+					</section>
+
 					<section>
 						<h2>Pourquoi c'est mieux maintenant</h2>
 						<p><img src="img/wllbgv2.png" /></p>
@@ -209,8 +224,13 @@
 				</section>
 
 				<section>
+
+					<section data-background="img/bg_benchmark.jpg">
+						<h2 class="black">Quelques benchmarks</h2>
+					</section>
+
 					<section>
-						<h2>Benchmark : qualité de code</h2>
+						<h2>Quelques benchmarks</h2>
 						<table>
 							<tr>
 								<th></th>
@@ -273,6 +293,11 @@
 				</section>
 
 				<section>
+
+					<section data-background="img/bg_framework.jpg">
+						<h2 class="black">Road to v2 : le choix du framework</h2>
+					</section>
+
 					<section>
 						<h2>Road to v2 : le choix du framework</h2>
 
@@ -335,22 +360,34 @@
 				</section>
 
 				<section>
-					<h2>Les étapes en cours</h2>
-					<ul>
-						<li>RabbitMQ</li>
-						<li>Elasticsearch</li>
-					</ul>
 
-					<aside class="notes">
-						Les imports via les services externes sont très gourmands en ressource et depuis le début du projet, ils ont toujours été sources d'issues : timeout en pagaille.
-						Avec la v2, nous avons décidé de reporter ça sur un broker (RabbitMQ pour l'instant, mais rien n'est encore réellement acté).
-						Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles :
-						* import
-						* action en masse sur les articles (refetch du contenu par exemple)
-					</aside>
-				</section>
+					<section data-background="img/bg_encours.jpg">
+						<h2 class="black">Les étapes en cours</h2>
+					</section>
+
+					<section>
+						<h2>Les étapes en cours</h2>
+						<ul>
+							<li>RabbitMQ</li>
+							<li>Elasticsearch</li>
+						</ul>
+
+						<aside class="notes">
+							Les imports via les services externes sont très gourmands en ressource et depuis le début du projet, ils ont toujours été sources d'issues : timeout en pagaille.
+							Avec la v2, nous avons décidé de reporter ça sur un broker (RabbitMQ pour l'instant, mais rien n'est encore réellement acté).
+							Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles :
+							* import
+							* action en masse sur les articles (refetch du contenu par exemple)
+						</aside>
+					</section>
+
+					</section>
 
 				<section>
+
+					<section data-background="img/bg_avenir.jpg">
+						<h2 class="black">Les étapes à venir</h2>
+					</section>
 
 					<section>
 						<h2>Les étapes à venir</h2>
@@ -401,9 +438,8 @@
 
 				</section>
 
-
-				<section>
-					<h2>Questions ?</h2>
+				<section data-background="img/bg_questions.jpg">
+					<h2 class="white">Des questions ?</h2>
 				</section>
 
 			</div>
