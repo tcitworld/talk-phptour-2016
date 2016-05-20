@@ -95,7 +95,7 @@
 						</table>
 
 					    <aside class="notes">
-					        wallabag est un read-it-later, une application de lecture différée : vous y stockez un article pour le lire plus tard, le contenu de l'article sera stocké et uniquement le contenu (wallabag supprimera tout ce qui est superflu, comme la publicité par exemple). Puisque wallabag existe en tant qu'application web et sur nos smartphones, vous retrouverez ces articles synchronisés automatiquement sur votre téléphone.
+					        wallabag est un read-it-later, une application de lecture différée : vous y stockez un article pour le lire plus tard, le contenu de l'article sera stocké et uniquement le contenu (wallabag supprimera tout ce qui est superflu, comme la publicité par exemple). Puisque wallabag existe en tant qu'application web et sur nos smartphones, vous retrouverez ces articles synchronisés automatiquement sur votre téléphone. D'autres fonctionnalités existent : les tags, les favoris, des filtres, de l'import depuis les services concurrents. 
 					    </aside>
 					</section>
 
@@ -352,7 +352,7 @@
 
 						<aside class="notes">
 							Grosse contrainte d'utiliser un framework comme Symfony : là où la v1 s'installe quasiment partout et très facilement, la v2 va forcément devenir plus complexe à installer pour les débutants.
-							Concernant SQLite
+							Concernant SQLite, les migrations de base de données sont plus complexes : supprimer un champ avec SQLite n'est pas possible (il faut supprimer la table puis la recréer). 
 						</aside>
 					</section>
 				</section>
@@ -368,6 +368,7 @@
 						<ul>
 							<li>RabbitMQ</li>
 							<li>Elasticsearch</li>
+							<li>Gérer les dépendances CSS et JS via <img src="img/npm.png" alt="npm" style="vertical-align:middle" /></li>
 						</ul>
 
 						<aside class="notes">
@@ -376,10 +377,12 @@
 							Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles :
 							* import
 							* action en masse sur les articles (refetch du contenu par exemple)
+
+							La mise en place d'ES nous permettrait d'envisager des fonctionnalités plus avancées comme une recherche avancée ou encore de la recommandation.
 						</aside>
 					</section>
 
-					</section>
+				</section>
 
 				<section>
 
@@ -394,13 +397,18 @@
 							<li>SaaS</li>
 							<li>Intégration de wallabag dans des applis tierces</li>
 						</ul>
+
+					    <aside class="notes">
+					        * React ou autre chose, rien n'est encore acté. Mais l'idée, c'est d'avoir une vraie application pour le front, qui utiliserait l'API. 
+					        * Pour wallabag v2, nous n'avons encore lancé aucun SaaS (contrairement à la v1 avec Framabag). Lancer un vrai SaaS de qualité est dans nos têtes. Il ne nous manque que le temps pour mettre ça en place. 
+					    </aside>
 					</section>
 
 					<section>
 						<h2>API : intégrations déjà réalisées</h2>
 						<ul>
 							<li>
-								<a href="https://blog.trigger-happy.eu/">Trigger-Happy.eu</a> : projet clone libre de IFTTT, automatisant la récupération de données sur le web, pour les poster dans wallabag via son API automatiquement. Les données peuvent également provenir et être publiées depuis Twitter, Trello et plein d'autres services web existants
+								<a href="https://blog.trigger-happy.eu/">Trigger-Happy.eu</a> : projet clone libre de IFTTT, automatisant la récupération de données sur le web, pour les poster dans wallabag via son API automatiquement. Les données peuvent également provenir et être publiées depuis Twitter, Trello et plein d'autres services web existants.
 								<ul>
 									<li><a href="https://github.com/foxmask/django-th/">github.com/foxmask/django-th</a></li>
 									<li><a href="https://twitter.com/triggerhappyeu">@TriggerHappyEu</a></li>
@@ -424,6 +432,10 @@
 							<li><a href="https://github.com/joshp23/ttrss-to-wallabag-v2">ttrss-to-wallabag-v2</a> : plugin pour ajouter dans wallabag depuis Tiny Tiny RSS</li>
 							<li>Librairies <a href="https://github.com/Strubbl/wallabag-java">Java</a> et <a href="https://github.com/jlnostr/wallabag-api">.NET</a></li>
 						</ul>
+
+					    <aside class="notes">
+					        Aujourd'hui, nos applications sont l'un des points faibles du projet : elles n'avancent pas au même rythme que l'application web, certaines fonctionnalités attendaient l'API pour que l'on puisse les mettre en place. Pour l'application Android, elle est compatible avec la v2 mais n'utilise pas encore l'API. 
+					    </aside>
 					</section>
 
 					<section>
@@ -433,6 +445,10 @@
 							<li>ownCloud</li>
 							<li>Fabricants de liseuses</li>
 						</ul>
+
+					    <aside class="notes">
+					        Concernant Cozy Cloud ou ownCloud, la demande des utilisateurs devient de plus en plus forte. Nous sommes déjà en contact avec eux. Pour les fabricants de liseuses, Nicolas a déjà rencontré il y a plusieurs mois un fabricant français, mais la discussion est restée en standby. Si certains sont intéressés, qu'ils nous contactent. 
+					    </aside>
 					</section>
 
 				</section>
@@ -453,12 +469,12 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
 
-				transition: 'fade', // none/fade/slide/convex/concave/zoom
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
