@@ -1,0 +1,21 @@
+footer {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  margin-left: 20px;
+  z-index: 20;
+  font-family: "Lato", sans-serif;
+  color: #333;
+}
+
+footer a {
+  color: #8b743d;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+footer a:hover {
+  color: #c0a86e;
+  text-shadow: none;
+  border: none; }
