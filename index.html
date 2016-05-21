@@ -68,10 +68,11 @@
 					<h2 class="black">Plan</h2>
 					<ul class="black">
 						<li>Fonctionnalités et histoire</li>
-						<li>La v1 : pourquoi ça n'était pas mieux avant</li>
-						<li>La v2 : pourquoi c'est mieux maintenant</li>
+						<li>Pourquoi ça n'était pas mieux avant</li>
+						<li>Pourquoi c'est mieux maintenant</li>
 						<li>Quelques benchmarks</li>
-						<li>Les étapes pour arriver à la v2</li>
+						<li>En route pour la v2</li>
+						<li>Les difficultés</li>
 						<li>Les étapes en cours</li>
 						<li>Les étapes à venir</li>
 					</ul>
@@ -180,7 +181,7 @@
 				<section>
 					<section data-background="img/bg_maintenant.jpg">
 						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-						<h2 class="white">Pourquoi c'est mieux maintenant</h2>
+						<h2 class="black">Pourquoi c'est mieux maintenant</h2>
 					</section>
 
 					<section>
@@ -211,7 +212,7 @@
 						<h2>On comble les lacunes techniques</h2>
 						<ul>
 							<li>
-								Sorte de Definition of Done pour chaque commit :
+								Sorte de <i>Definition of Done</i> pour chaque commit :
 								<ul>
 									<li>Documentation utilisateur</li>
 									<li>Tests unitaires et fonctionnels</li>
@@ -279,7 +280,7 @@
 
 					<section>
 						<h2>Chargement des pages</h2>
-						<p><img src="img/blackfire.png" /></p>
+						<p><i>Analyses faites avec Blackfire</i></p>
 						<table>
 							<tr>
 								<th></th>
@@ -289,19 +290,29 @@
 							<tr>
 								<td>Liste d'articles (460)</td>
 								<td>330ms<br />17 Mo</td>
-								<td><span style="color: red">689ms</span> (~200ms pour Sf)<br /><span style="color: red">31 Mo</span></td>
+								<td><span style="color: red">689ms</span><br /><span style="color: red">31 Mo</span></td>
 							</tr>
 							<tr>
 								<td>Un article</td>
 								<td>89ms<br />10 Mo</td>
-								<td><span style="color: red">281</span> (~200ms pour Sf)<br /><span style="color: red">17 Mo</span></td>
+								<td><span style="color: red">281ms</span><br /><span style="color: red">17 Mo</span></td>
 							</tr>
 							<tr>
 								<td>Liste des tags (20)</td>
 								<td>85ms<br />10 Mo</td>
-								<td><span style="color: red">314ms</span> (~200ms pour Sf)<br /><span style="color: red">19 Mo</span></td>
+								<td><span style="color: red">314ms</span><br /><span style="color: red">19 Mo</span></td>
 							</tr>
 						</table>
+					</section>
+
+					<section>
+						<h2>En conclusion ...</h2>
+						<p>C'est pas très fameux pour la v2 tout ça !</p>
+						<ul>
+							<li>Un framework, c'est lourd</li>
+							<li>Le <i>plain PHP</i> c'est forcément rapide</li>
+							<li>Pas trop focalisé sur la perf, <i>pour le moment</i></li>
+						</ul>
 					</section>
 				</section>
 
@@ -355,7 +366,7 @@ $result = @file_get_contents($request);
 					<section>
 						<h2>Extraction de contenu</h2>
 						<ul>
-							<li>MAIS, sa capacité d'extraction est efficace !</li>
+							<li><b>MAIS</b>, sa capacité d'extraction est efficace !</li>
 							<li>Utilise le microformat <a href="http://microformats.org/wiki/hnews">hNews</a></li>
 							<li>Utilise les données de <a href="https://schema.org/articleBody">Schema.org</a></li>
 							<li>Basée sur php-readability</li>
@@ -419,8 +430,8 @@ $result = $graby->fetchContent($article);
 
 				<section>
 
-					<section data-background="img/bg_encours.jpg">
-						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					<section data-background="img/bg_difficultes.jpg">
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 						<h2 class="white">Les difficultés</h2>
 					</section>
 
@@ -431,7 +442,7 @@ $result = $graby->fetchContent($article);
 						<ul>
 							<li class="fragment">sur un serveur dédié</li>
 							<li class="fragment">sur un serveur mutualisé</li>
-							<li class="fragment">sur un ... raspberry</li>
+							<li class="fragment">sur un ... raspberry (<i>c'est pas gagné ...</i>)</li>
 						</ul>
 
 						<p class="fragment">Et installable par tout le monde</p>
@@ -527,7 +538,7 @@ php app/console wallabag:install --env=prod
 						<ul>
 							<li>Toujours bien en version de prod</li>
 							<li>Facilite la mise à jour (par les tags)</li>
-							<li>Mais toujours des soucis de mémoires</li>
+							<li>Mais toujours des soucis de mémoire</li>
 						</ul>
 					</section>
 
@@ -557,8 +568,8 @@ php app/console wallabag:install --env=prod
 					<section>
 						<h2>Les étapes en cours</h2>
 						<ul>
-							<li>RabbitMQ</li>
-							<li>Elasticsearch</li>
+							<li>RabbitMQ, pour les gros traitements</li>
+							<li>Elasticsearch, pour la recherche (si si)</li>
 							<li>Gérer les dépendances CSS et JS via <img src="img/npm.png" alt="npm" style="vertical-align:middle" /></li>
 						</ul>
 
@@ -579,16 +590,16 @@ php app/console wallabag:install --env=prod
 				<section>
 
 					<section data-background="img/bg_avenir.jpg">
-						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						<br/><br/><br/><br/><br/>
 						<h2 class="white">Les étapes à venir</h2>
 					</section>
 
 					<section>
 						<h2>Les étapes à venir</h2>
 						<ul>
-							<li>Front en React</li>
-							<li>SaaS</li>
-							<li>Intégration de wallabag dans des applis tierces</li>
+							<li>Un front en React</li>
+							<li>Une solution SaaS</li>
+							<li>Intégration dans des applis tierces</li>
 						</ul>
 
 						<aside class="notes">
@@ -600,29 +611,27 @@ php app/console wallabag:install --env=prod
 
 					<section>
 						<h2>API : intégrations déjà réalisées</h2>
+						<p><a href="https://blog.trigger-happy.eu/">Trigger-Happy.eu</a> : projet clone libre de IFTTT</p>
 						<ul>
-							<li>
-								<a href="https://blog.trigger-happy.eu/">Trigger-Happy.eu</a> : projet clone libre de IFTTT, automatisant la récupération de données sur le web,
-								pour les poster dans wallabag via son API automatiquement. Les données peuvent également provenir et être publiées depuis Twitter, Trello et
-								plein d'autres services web existants.
-								<ul>
-									<li><a href="https://github.com/foxmask/django-th/">github.com/foxmask/django-th</a></li>
-									<li><a href="https://twitter.com/triggerhappyeu">@TriggerHappyEu</a></li>
-								</ul>
-							</li>
+							<li><a href="https://github.com/foxmask/django-th/">github.com/foxmask/django-th</a></li>
+							<li><a href="https://twitter.com/triggerhappyeu">@TriggerHappyEu</a></li>
 						</ul>
+
+						<aside class="notes">
+								Automatisant la récupération de données sur le web, pour les posters dans wallabag via son API automatiquement.
+								Les données peuvent également provenir et être publiées depuis Twitter, Trello et plein d'autres services web existants.
+						</aside>
 					</section>
 
 					<section>
 						<h2>API : intégrations déjà réalisées</h2>
-						<h3>Trigger-Happy</h3>
 						<p><img src="img/triggerhappy.png" /></p>
 					</section>
 
 					<section>
 						<h2>API : intégrations déjà réalisées</h2>
 						<ul>
-							<li>application Windows Phone (Android et iOS en cours de réalisation)</li>
+							<li>Application Windows Phone (Android et iOS en cours de réalisation)</li>
 							<li>Addon pour Firefox</li>
 							<li><a href="https://github.com/joshp23/ttrss-to-wallabag-v2">ttrss-to-wallabag-v2</a> : plugin pour ajouter dans wallabag depuis Tiny Tiny RSS</li>
 							<li>Librairies <a href="https://github.com/Strubbl/wallabag-java">Java</a> et <a href="https://github.com/jlnostr/wallabag-api">.NET</a></li>
