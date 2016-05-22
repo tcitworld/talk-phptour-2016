@@ -175,6 +175,10 @@
 							<li>Déploiement manuel via Filezilla 🙈</li>
 							<li>Équipe de deux personnes</li>
 						</ul>
+
+						<aside class="notes">
+							34.000 téléchargements depuis déc. 2013
+						</aside>
 					</section>
 				</section>
 
@@ -224,6 +228,14 @@
 							<li>Le moins d'actions manuelles possible</li>
 							<li>Équipe plus conséquente : une core team, des traducteurs, des développeurs</li>
 						</ul>
+
+						<aside class="notes">
+							Equipe de 20 personnes
+							8 traducteurs
+							3.600 téléchargements (depuis la première alpha)
+							9.200 comptes sur Framabag (https://framabag.org/analytics/ )
+						</aside>
+
 					</section>
 
 					<section>
@@ -400,6 +412,41 @@ $article = 'http://www.bbc.co.uk/news/world-europe-21936308';
 $graby = new Graby();
 $result = $graby->fetchContent($article);
 						</code></pre>
+
+						<aside class="notes">
+							Test fonctionnels sur l'existant pour valider la refonte
+							OptionResolver pour la configuration
+							Guzzle pour les appels cURL
+						</aside>
+					</section>
+
+					<section>
+						<h2>La migraton en soit</h2>
+						<ul>
+							<li>
+								Par itération
+								<ul>
+									<li>Le socle Symfony</li>
+									<li>La connexion utilisateur</li>
+									<li>La configuration</li>
+									<li>La commande <code>wallabag:install</code></li>
+									<li>L'ajout d'un lien</li>
+									<li>L'ajout de tags</li>
+									<li>Etc.</li>
+								</ul>
+							</li>
+							<li>Globalement, tout a été réécrit</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>La migraton en soit</h2>
+						<ul>
+							<li>La v2 n'est pas ISO avec la v1</li>
+							<li>v2.0.0 : focaliser sur le fonctionnement de base</li>
+							<li>v2.0.x : focaliser sur la stabilité</li>
+							<li>v2.x : amélioration des fonctionnalités (tag, recherche)</li>
+						</ul>
 					</section>
 
 					<section>
@@ -447,6 +494,11 @@ $result = $graby->fetchContent($article);
 
 						<p class="fragment">Et installable par tout le monde</p>
 						<p class="fragment">"tout le monde" inclut des personnes <i>novices</i></p>
+
+						<aside class="notes">
+							Grosse contrainte d'utiliser un framework comme Symfony : là où la v1 s'installe quasiment partout et très facilement, la v2 va forcément devenir
+							plus complexe à installer pour les débutants.
+						</aside>
 					</section>
 
 					<section>
@@ -466,11 +518,6 @@ unzip latest
 
 						<p>+ quelques lignes de SQL</p>
 						<p>Dans l'ensemble aucun souci ✅</p>
-
-						<aside class="notes">
-							Grosse contrainte d'utiliser un framework comme Symfony : là où la v1 s'installe quasiment partout et très facilement, la v2 va forcément devenir
-							plus complexe à installer pour les débutants.
-						</aside>
 					</section>
 
 					<section>
@@ -553,6 +600,8 @@ php app/console wallabag:install --env=prod
 						<aside class="notes">
 							Concernant SQLite, les migrations de base de données sont plus complexes : supprimer un champ avec SQLite n'est pas possible (il faut supprimer la
 							table puis la recréer).
+							Toujours plus de SiteConfig
+							Toujours difficile d'isolser un soucis
 						</aside>
 					</section>
 
@@ -574,14 +623,14 @@ php app/console wallabag:install --env=prod
 						</ul>
 
 						<aside class="notes">
-							Les imports via les services externes sont très gourmands en ressource et depuis le début du projet, ils ont toujours été sources d'issues :
-							timeout en pagaille.
-							Avec la v2, nous avons décidé de reporter ça sur un broker (RabbitMQ pour l'instant, mais rien n'est encore réellement acté).
-							Quand cette fonctionnalité sera en place, plusieurs nouvelles fonctionnalités seront possibles :
-							* import
-							* action en masse sur les articles (refetch du contenu par exemple)
+							Imports très gourmands en ressource
+							Timeout en pagaille
+							RabbitMQ pour l'instant, mais rien n'est encore réellement acté
+							Pour
+								* import
+								* action en masse sur les articles (refetch du contenu par exemple)
 
-							La mise en place d'ES nous permettrait d'envisager des fonctionnalités plus avancées comme une recherche avancée ou encore de la recommandation.
+							ES pour la recherche avancée ou de la recommandation
 						</aside>
 					</section>
 
@@ -603,8 +652,10 @@ php app/console wallabag:install --env=prod
 						</ul>
 
 						<aside class="notes">
-							* React ou autre chose, rien n'est encore acté. Mais l'idée, c'est d'avoir une vraie application pour le front, qui utiliserait l'API.
-							* Pour wallabag v2, nous n'avons encore lancé aucun SaaS (contrairement à la v1 avec Framabag). Lancer un vrai SaaS de qualité est dans nos têtes.
+							React ou autre chose
+							L'idée, c'est d'avoir une vraie application pour le front, qui utiliserait l'API.
+							Pas de SaaS pour la v2 (contrairement à la v1 avec Framabag).
+							Lancer un vrai SaaS de qualité est dans nos têtes.
 							Il ne nous manque que le temps pour mettre ça en place.
 						</aside>
 					</section>
